@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import logo from './../../assets/Depth 3, Frame 0.svg'
+import logo from './../../assets/logo.svg'
 import styles from './../Login/Login.module.css'
 // import { useForm } from 'react-hook-form';
 
