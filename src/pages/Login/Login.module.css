@@ -1,0 +1,70 @@
+
+@import './../../styles/global.css';
+
+.container{
+    margin: 0 auto;
+    width: 80%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* alinha no eixo horizontal */
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+}
+
+img{
+    width: 200px;
+}
+
+form{
+    width: 50%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+input{
+    width: 80%;
+    margin: 5px 0;
+    color: var(--primary-color);
+    background-color: var(--auxiliar-color);
+    border: none;
+    border-radius: 12px;
+    height: 50px;
+    padding-left: 15px;
+}
+
+button{
+    padding: 16px;
+    border-radius: 20px;
+    color: var(--text-color);
+    background-color: var(--secondary-color);
+    border: none;
+    width: 90%;
+    cursor: pointer;
+    margin: 12px 0;
+    font-weight: bold;
+    transition: 1s;
+}
+
+button:hover{
+    background-color: var(--button-hover);
+}
+
+p{
+  color: var(--second-text-color);
+  text-decoration: none;
+}
+
+.linkSemUnderline {
+  text-decoration: none;
+  color: inherit; /* Opcional, para manter a cor do texto normal */
+}
+
+.linkSemUnderline p{ transition: 1s;}
+
+.linkSemUnderline p:hover{
+     color: var(--text-color);
+ 
+}

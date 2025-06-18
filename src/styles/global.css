@@ -1,8 +1,11 @@
 :root {
   --primary-color: #618561;
   --secondary-color: #94E0B0;
+  --button-hover:  #b5f6cd;
   --background-color: #f9f9f9;
+  --auxiliar-color: #E8F2ED;
   --text-color: #0F1A12;
+  --second-text-color: #598C6E;
   --error-color: #ec3726;
 }
 
