@@ -4,7 +4,7 @@
 .container{
     margin: 0 auto;
     width: 80%;
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-direction: column;
     justify-content: center; /* alinha no eixo horizontal */
@@ -25,13 +25,13 @@ form{
 }
 
 input{
-    width: 80%;
+    width: 90%;
     margin: 5px 0;
     color: var(--primary-color);
     background-color: var(--auxiliar-color);
     border: none;
     border-radius: 12px;
-    height: 50px;
+    height: 45px;
     padding-left: 15px;
 }
 
@@ -41,7 +41,7 @@ button{
     color: var(--text-color);
     background-color: var(--secondary-color);
     border: none;
-    width: 90%;
+    width: 100%;
     cursor: pointer;
     margin: 12px 0;
     font-weight: bold;
@@ -53,7 +53,7 @@ button:hover{
 }
 
 p{
-  color: var(--second-text-color);
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -62,7 +62,7 @@ p{
   color: inherit; /* Opcional, para manter a cor do texto normal */
 }
 
-.linkSemUnderline p{ transition: 1s;}
+.linkSemUnderline p{ transition: 1s; color: var(--second-text-color);}
 
 .linkSemUnderline p:hover{
      color: var(--text-color);
