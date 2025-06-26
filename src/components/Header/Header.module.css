@@ -20,8 +20,26 @@ header{
     padding: 11px;
 }
 
+.navLinks{
+    align-items: center;
+}
+
+.navLinks Link{
+    align-items: center;
+}
+
 .navLinks a{
     margin: 5px;
     text-decoration: none;
     color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.navLinks img{
+    margin: 0 9px;
+    transition: 0.9s;
+}
+
+.navLinks img:hover{
+    opacity: 50%;
 }

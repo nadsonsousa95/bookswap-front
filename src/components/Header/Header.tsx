@@ -3,6 +3,7 @@ import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
 import logo from './../../assets/img/logo.svg'
 import iconNotf from './../../assets/icons/messages.svg'
+import profile from './../../assets/img/profile.svg'
 
 export function Header(){
     const loadingAuth: boolean = false;
@@ -27,7 +28,9 @@ export function Header(){
                             <Link to={'/'}>
                                 <img style={{ width:35 }} src={iconNotf}/>
                             </Link>
-                            <Link to={'/dashboard'}><a>Perfil</a></Link>
+                            <Link to={'/dashboard'}>
+                                <img style={{ width:40}} src={profile}/>
+                            </Link>
                         </div>
                     )}
                 </div>
