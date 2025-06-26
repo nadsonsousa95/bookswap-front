@@ -3,6 +3,7 @@ import  type { Book } from "../../types/Book"
 import { mockBooks } from "../../api/mockbooks";
 import { Header } from "../../components/Header/Header";
 import styles from './BookDetail.module.css'
+import returnIcon from './../../assets/icons/keyboard_return.svg'
 
 export default function BookDetail(){
     const {id} = useParams();
@@ -16,7 +17,11 @@ export default function BookDetail(){
         <div>
             <Header></Header>
             <div className={styles.container}>
-                <Link to="/">← Voltar</Link>
+                <Link to="/">
+                    <img style={{width:35, color:"green"}} 
+                    src={returnIcon} 
+                    alt="voltar" />
+                </Link>
                 <h1>{book.title}</h1>
                 <img 
                 src={book.imageUrl} 

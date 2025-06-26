@@ -1,11 +1,26 @@
+@import './../../styles/global.css';
 
 
 .input{
-    margin: 40px auto;
+    margin: 42px auto;
+    padding-left: 45px;
+}
+
+.input::placeholder{
+    color: var(--second-text-color);
 }
 
 
 .container{
     width: 80%;
     margin: 0 auto;
+}
+
+.img{
+    width: 24px;
+    position: absolute;
+    top: 20%;
+    margin-left: 15px;
+    margin-top: 4px;
+    pointer-events: none;
 }

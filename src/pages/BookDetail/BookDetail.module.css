@@ -6,7 +6,6 @@
     width: 80%;
     margin: 0 auto;
     padding: 20px;
-    background-color: var(--background-color);
     align-items: center;
     padding: 20px;
 }
@@ -16,5 +15,10 @@
 }
 
 .button{
-    width: 50%;
+    width: 40%;
+}
+
+span{
+    text-decoration: none;
+    color: var(--text-color);
 }
