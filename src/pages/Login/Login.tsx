@@ -1,5 +1,5 @@
 import {Link, useNavigate} from 'react-router-dom'
-import logo from './../../assets/logo.svg'
+import logo from './../../assets/img/logo.svg'
 import styles from './Login.module.css'
 // import { useForm } from 'react-hook-form';
 

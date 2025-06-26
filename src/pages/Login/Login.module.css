@@ -68,3 +68,7 @@ p{
      color: var(--text-color);
  
 }
+
+.errorMessage{
+    color: var(--error-color);
+}

@@ -1,11 +1,12 @@
 
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import logo from './../../assets/logo.svg'
+import logo from './../../assets/img/logo.svg'
+import iconNotf from './../../assets/icons/messages.svg'
 
 export function Header(){
     const loadingAuth: boolean = false;
-    const signed: boolean = false;
+    const signed: boolean = true;
 
     return (
         <div className={styles.container}>
@@ -22,9 +23,12 @@ export function Header(){
                     )}
 
                     {!loadingAuth && signed && (
-                        <Link to={'/login'}>
-                            <button className={styles.button}>Entrar</button>
-                        </Link>
+                        <div className={styles.navLinks}>
+                            <Link to={'/'}>
+                                <img style={{ width:35 }} src={iconNotf}/>
+                            </Link>
+                            <Link to={'/dashboard'}><a>Perfil</a></Link>
+                        </div>
                     )}
                 </div>
                 

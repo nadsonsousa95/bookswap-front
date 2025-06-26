@@ -19,3 +19,9 @@ header{
     width: 200px;
     padding: 11px;
 }
+
+.navLinks a{
+    margin: 5px;
+    text-decoration: none;
+    color: var(--text-color);
+}
