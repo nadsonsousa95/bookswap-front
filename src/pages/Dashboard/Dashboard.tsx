@@ -3,7 +3,7 @@ import styles from './Dashboard.module.css'
 import { useState } from "react";
 import type { StudentProfile } from "../../types/ProfileProps";
 import profileImg from './../../assets/img/profile.svg'
-import { Link } from "react-router-dom";
+import { PainelHeader } from "../../components/PainelHeader/PainelHeader.tsx";
 
 function Dashboard() {
     const [isEditing, setIsEditing] = useState(false);
@@ -40,6 +40,7 @@ function Dashboard() {
     <div>
       <Header></Header>
       <div className={styles.container}>
+        <PainelHeader></PainelHeader>
       <h1 className={styles.title}>Perfil</h1>
       <p className={styles.subtitle}>Gerencie suas informações e livros</p>
 
@@ -136,9 +137,6 @@ function Dashboard() {
         </button>
       </div>
         <h2 className={styles.title}>Meus Livros</h2>
-        <Link to={'/'}>
-            <button className={styles.buttoNewBook}>Adicionar Novo Livro</button>
-        </Link>
     </div>
     </div>
   )

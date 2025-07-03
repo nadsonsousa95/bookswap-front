@@ -3,7 +3,8 @@ import  type { Book } from "../../types/Book"
 import { mockBooks } from "../../api/mockbooks";
 import { Header } from "../../components/Header/Header";
 import styles from './BookDetail.module.css'
-import returnIcon from './../../assets/icons/keyboard_return.svg'
+import { IoIosReturnLeft } from "react-icons/io";
+
 
 export default function BookDetail(){
     const {id} = useParams();
@@ -18,9 +19,10 @@ export default function BookDetail(){
             <Header></Header>
             <div className={styles.container}>
                 <Link to="/">
-                    <img style={{width:35, color:"green"}} 
-                    src={returnIcon} 
-                    alt="voltar" />
+                    <IoIosReturnLeft 
+                        size={25}
+                        color="#0F1A12"
+                    />
                 </Link>
                 <h1>{book.title}</h1>
                 <img 

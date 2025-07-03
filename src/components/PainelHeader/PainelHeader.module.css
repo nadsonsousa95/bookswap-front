@@ -1,0 +1,33 @@
+@import './../../styles/global.css';
+
+.container{
+    top: 120px;
+    position: absolute;
+    right: 20px;
+    padding: 1rem;
+}
+
+.painelheaderbuttons{
+    display: flex;
+    align-items: center;
+}
+
+.painelheaderbuttons div{
+    margin-left: 25px;
+    align-items: center;
+    display: flex;
+}
+
+.painelheaderbuttons div span{
+    margin-bottom: 10px;
+}
+
+.addBook{
+    border: 1px solid var(--secondary-color);
+    padding: 5px 10px;
+    border-radius: 10px;
+}
+
+.addBook p{
+    margin: 5px;
+}

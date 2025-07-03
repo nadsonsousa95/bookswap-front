@@ -44,6 +44,12 @@ label {
   border-radius: 8px;
   font-size: 1rem;
   background-color: var(--auxiliar-color);
+  text-decoration-color: var(--second-text-color);
+}
+
+.input,textarea:focus {
+  border-color: var(--primary-color);
+  outline: none; 
 }
 
 .textarea{
