@@ -17,18 +17,20 @@ function Login() {
             <img src={logo} />
         </Link>
         <p>Faça o seu login para começar a trocar livros!</p>
-        <form>
+        <form onSubmit={handleSubmit}>
             <input 
                 type="email" 
                 name="email" 
                 placeholder='Seu email'
+                required
                 />
             <input 
                 type='password' 
                 name='password' 
                 placeholder='Sua senha'
+                required
                 />
-            <button onClick={handleSubmit} type='submit'>Continue</button>
+            <button type='submit'>Continue</button>
         </form>
 
         <Link className={styles.linkSemUnderline} to='/register' >

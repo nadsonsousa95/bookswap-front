@@ -1,7 +1,7 @@
 
 import type {Book}  from "../types/Book";
 
-export const mockBooks: Book[] = [
+export let mockBooks: Book[] = [
   {
     id: 1,
     title: "Dom Casmurro",

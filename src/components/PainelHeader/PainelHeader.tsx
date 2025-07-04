@@ -13,7 +13,7 @@ export function PainelHeader(){
             <header>
                 <div className={styles.painelheaderbuttons}>
                     <div className={styles.addBook}>
-                        <Link to={'/'}>
+                        <Link to={'/addBook'}>
                             <IoMdAddCircleOutline 
                                 size={35}
                                 color={'#94E0B0'}
