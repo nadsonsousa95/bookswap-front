@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import logo from './../../assets/img/logo.svg'
 import iconNotf from './../../assets/icons/messages.svg'
 import profile from './../../assets/img/profile.svg'
+import { useAuth } from "../../contexts/AuthContext.tsx";
+
 
 export function Header(){
-    const loadingAuth: boolean = false;
-    const signed: boolean = true;
+    const { user } = useAuth();
 
     return (
         <div className={styles.container}>
@@ -17,13 +18,13 @@ export function Header(){
                 </Link>
 
                 <div className={styles.headerLinks}>
-                    {!loadingAuth && !signed && (
+                    {!user && (
                         <Link to={'/login'}>
                             <button className={styles.button}>Entrar</button>
                         </Link>
                     )}
 
-                    {!loadingAuth && signed && (
+                    {user && (
                         <div className={styles.nav}>
                             <div className={styles.textLinks}>
                                 <a href='/'>Buscar Livros</a>

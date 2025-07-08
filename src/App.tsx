@@ -6,23 +6,26 @@ import BookDetail from './pages/BookDetail/BookDetail'
 import Dashboard from './pages/Dashboard/Dashboard'
 import Register from './pages/Register/Register'
 import AddBook from './pages/AddBook/AddBook'
+import { AuthProvider } from './contexts/AuthContext'
+import { PrivateRoute } from './routes/PrivateRoute'
 
 function App() {
 
   return (
+    <AuthProvider>
     <Router>
       <Routes>
         <Route path='/' element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-          
+        <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/books/:id" element={<BookDetail></BookDetail>} />
-        <Route path='/addBook' element={<AddBook></AddBook>} />
+        <Route path='/addBook' element={<PrivateRoute><AddBook></AddBook></PrivateRoute>} />
 
 
       </Routes>
     </Router>
+    </AuthProvider>
   )
 }
 

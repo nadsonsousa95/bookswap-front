@@ -3,9 +3,12 @@ import styles from './PainelHeader.module.css';
 import { Link } from 'react-router-dom';
 import { CiLogout } from "react-icons/ci";
 import { IoMdAddCircleOutline } from "react-icons/io";
+import { useAuth } from "../../contexts/AuthContext.tsx";
 
 
 export function PainelHeader(){
+    const { logout } = useAuth();
+
     return (
         <div className={styles.container}>
             <header>
@@ -20,12 +23,11 @@ export function PainelHeader(){
                         <p>Adicionar novo livro</p>
                     </div>
                     <div>
-                        <Link to={'/login'}>
-                            <CiLogout 
-                                size={25}
-                                color='black'
-                            />
-                        </Link>
+                        <CiLogout 
+                            onClick={logout}
+                            size={25}
+                            color='black'
+                        />
                         <p className={styles.logoutText}>Sair</p>
                     </div>
                 </div>

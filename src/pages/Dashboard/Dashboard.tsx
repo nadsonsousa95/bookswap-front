@@ -5,9 +5,11 @@ import type { StudentProfile } from "../../types/ProfileProps";
 import profileImg from './../../assets/img/profile.svg'
 import { PainelHeader } from "../../components/PainelHeader/PainelHeader.tsx";
 import { Footer } from "../../components/Footer/Footer";
-
+import { useAuth } from "../../contexts/AuthContext.tsx";
 
 function Dashboard() {
+    const { user } = useAuth();
+
     const [isEditing, setIsEditing] = useState(false);
     const [profile, setProfile] = useState<StudentProfile>({
       name: "Nadson Benigno",
@@ -44,6 +46,7 @@ function Dashboard() {
       <div className={styles.container}>
         <PainelHeader></PainelHeader>
       <h1 className={styles.title}>Perfil</h1>
+      <h2>Bem vindo, {user?.name}!</h2>
       <p className={styles.subtitle}>Gerencie suas informações e livros</p>
 
       <div className={styles.profileCard}>

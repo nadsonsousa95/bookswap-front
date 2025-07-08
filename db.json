@@ -59,6 +59,7 @@
   "users": [
     {
         "id": 1,
+        "name": "Nadson Junior",
         "email": "nadsonbcs95@gmail.com",
         "password": "123456"
     }
