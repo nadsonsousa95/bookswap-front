@@ -24,7 +24,7 @@
     border: none;
     border-radius: 8px;
     cursor: pointer;
-    width: 93%;
+    width: 100%;
 }
 
 .inputImg:hover{
@@ -59,7 +59,6 @@
     background-color: rgb(255, 255, 255);
     border-radius: 8px;
     align-items: center;
-    margin-top: 15px;
     justify-content: center;
 }
 
@@ -74,7 +73,7 @@
     border: 1px solid #ffffff;
     text-decoration-color: var(--second-text-color);
     padding: 20px;
-    max-width: 85%;
+    max-width: 86%;
     background-color: var(--auxiliar-color);
     border-radius: 8px;
 }

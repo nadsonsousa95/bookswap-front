@@ -4,6 +4,8 @@ import { useState } from "react";
 import type { StudentProfile } from "../../types/ProfileProps";
 import profileImg from './../../assets/img/profile.svg'
 import { PainelHeader } from "../../components/PainelHeader/PainelHeader.tsx";
+import { Footer } from "../../components/Footer/Footer";
+
 
 function Dashboard() {
     const [isEditing, setIsEditing] = useState(false);
@@ -136,8 +138,8 @@ function Dashboard() {
           {isEditing ? "Salvar" : "Editar Perfil"}
         </button>
       </div>
-        <h2 className={styles.title}>Meus Livros</h2>
     </div>
+    <Footer></Footer>
     </div>
   )
 }

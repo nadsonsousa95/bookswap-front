@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import { CiLogout } from "react-icons/ci";
 import { IoMdAddCircleOutline } from "react-icons/io";
 
-import './../../styles/global.css';
-
 
 export function PainelHeader(){
     return (
@@ -28,6 +26,7 @@ export function PainelHeader(){
                                 color='black'
                             />
                         </Link>
+                        <p className={styles.logoutText}>Sair</p>
                     </div>
                 </div>
                 

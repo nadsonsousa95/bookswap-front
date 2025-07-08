@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { Header } from "../../components/Header/Header";
+import { Footer } from "../../components/Footer/Footer";
 import styles from './AddBook.module.css';
 import type {Book}  from "../../types/Book";
 import { v4 as uuidv4 } from 'uuid';
 import { mockBooks } from "../../api/mockbooks";
 import { FiUpload } from "react-icons/fi";
+import { PainelHeader } from "../../components/PainelHeader/PainelHeader";
 
 
 export default function AddBook(){
@@ -56,6 +58,7 @@ export default function AddBook(){
         <div>
             <Header></Header>
             <div className={styles.container}>
+                <PainelHeader></PainelHeader>
                 <h1>Anunciar novo livro</h1>
 
                 <form className={styles.formAddlivro} onSubmit={handleSubmit}>
@@ -99,7 +102,7 @@ export default function AddBook(){
                         onChange={handleChange}
                         required
                         />
-                    <label className={styles.label}><strong>Dercrição (opcional):</strong></label>
+                    <label className={styles.label}><strong>Descrição (opcional):</strong></label>
                     <textarea
                         className={styles.textarea}
                         name="description"
@@ -139,7 +142,7 @@ export default function AddBook(){
                     <button type="submit">Salvar</button>
                 </form>
             </div>
-            
+            <Footer></Footer>
         </div>
     )
 }

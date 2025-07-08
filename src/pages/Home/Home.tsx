@@ -2,6 +2,7 @@ import { Header } from "../../components/Header/Header"
 import styles from './Home.module.css';
 import { BooksList } from "../../components/BooksList/BookList";
 import { FiSearch } from 'react-icons/fi'
+import { Footer } from "../../components/Footer/Footer";
 
 
 export default function Home() {
@@ -22,6 +23,7 @@ export default function Home() {
          <h1>Livros Disponíveis</h1>
           <BooksList></BooksList>
         </div>
+        <Footer></Footer>
     </div>
 
   )

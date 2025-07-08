@@ -1,3 +1,5 @@
+@import './../../styles/global.css';
+
 
 .container{
     padding: 20px;
@@ -20,26 +22,38 @@ header{
     padding: 11px;
 }
 
+.nav{
+    align-items: center;
+    display: flex;
+}
+
 .navLinks{
     align-items: center;
 }
 
-.navLinks Link{
-    align-items: center;
+.textLinks a{
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--primary-color);
+    margin: 15px;
 }
 
-.navLinks a{
-    margin: 5px;
-    text-decoration: none;
-    color: var(--text-color);
-    margin-bottom: 8px;
+.textLinks{
+    align-items: center;
+    padding: 5px;
+}
+
+.textLinks a:hover{
+    border-bottom: 4px solid var(--secondary-color);
+    
 }
 
 .navLinks img{
-    margin: 0 9px;
+    margin: 0 10px;
     transition: 0.9s;
 }
 
 .navLinks img:hover{
     opacity: 50%;
 }
+

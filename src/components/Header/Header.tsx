@@ -16,7 +16,7 @@ export function Header(){
                     <img className={styles.logo} src={logo}/>
                 </Link>
 
-                <div>
+                <div className={styles.headerLinks}>
                     {!loadingAuth && !signed && (
                         <Link to={'/login'}>
                             <button className={styles.button}>Entrar</button>
@@ -24,13 +24,20 @@ export function Header(){
                     )}
 
                     {!loadingAuth && signed && (
-                        <div className={styles.navLinks}>
-                            <Link to={'/'}>
-                                <img style={{ width:35 }} src={iconNotf}/>
-                            </Link>
-                            <Link to={'/dashboard'}>
-                                <img style={{ width:40}} src={profile}/>
-                            </Link>
+                        <div className={styles.nav}>
+                            <div className={styles.textLinks}>
+                                <a href='/'>Buscar Livros</a>
+                                <a>Minha biblioteca</a>
+                                
+                            </div>
+                            <div className={styles.navLinks}>
+                                <Link to={'/'}>
+                                    <img style={{ width:35 }} src={iconNotf}/>
+                                </Link>
+                                <Link to={'/dashboard'}>
+                                    <img style={{ width:40}} src={profile}/>
+                                </Link>
+                           </div>
                         </div>
                     )}
                 </div>

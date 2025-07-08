@@ -30,4 +30,10 @@
 
 .addBook p{
     margin: 5px;
+    color: var(--primary-color);
+}
+
+.logoutText{
+    margin-left: 10px;
+    color: var(--primary-color);
 }

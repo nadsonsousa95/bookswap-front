@@ -1,7 +1,6 @@
 // src/components/BooksList.tsx
 import { useEffect, useState } from "react";
 import type { Book } from "../../types/Book";
-import { mockBooks } from "../../api/mockbooks";
 import styles from "./BookList.module.css";
 import { Link } from "react-router-dom";
 
@@ -9,10 +8,11 @@ export const BooksList = () => {
   const [books, setBooks] = useState<Book[]>([]);
 
   useEffect(() => {
-    setTimeout(() => {
-      setBooks(mockBooks);
-    }, 500);
-  }, []);
+    fetch('src/api/books.json')
+      .then(res => res.json())
+      .then(data => setBooks(data))
+      .catch(err => console.error('Erro ao carregar livros...', err))
+  }, [5000]);
 
   return (
     <div className={styles.container}>
