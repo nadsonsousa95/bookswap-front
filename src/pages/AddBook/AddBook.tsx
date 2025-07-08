@@ -4,14 +4,15 @@ import { Footer } from "../../components/Footer/Footer";
 import styles from './AddBook.module.css';
 import type {Book}  from "../../types/Book";
 import { v4 as uuidv4 } from 'uuid';
-import { mockBooks } from "../../api/mockbooks";
 import { FiUpload } from "react-icons/fi";
 import { PainelHeader } from "../../components/PainelHeader/PainelHeader";
+import { createBook } from "../../services/bookService";
 
 
 export default function AddBook(){
+    const [success, setSuccess] = useState(false)
     const [book, setBook] = useState<Book>({
-        id: parseInt(uuidv4()),
+        id: uuidv4(),
         title: '',
         author: '',
         edition: '',
@@ -21,20 +22,24 @@ export default function AddBook(){
     })
 
     function handleSubmit(e: React.FormEvent){
-        e.preventDefault()
-        mockBooks.push(book)
-        console.log(book)
-
-        setBook({
-            id: 0,
-            title: '',
-            author: '',
-            edition: '',
-            description: '',
-            swap: '',
-            user: '',
-            imageUrl: ''
-        });
+        e.preventDefault();
+        createBook(book)
+            .then(()=> {
+                setSuccess(true);
+                console.log('Livro criado');
+                setBook({
+                    id: uuidv4(),
+                    title: '',
+                    author: '',
+                    edition: '',
+                    swap: '',
+                    user: '',
+                    imageUrl: '',
+                    description: ''
+                });
+                setTimeout(() => setSuccess(false), 3000);
+            })
+            .catch((err) => console.error('Erro ao criar livro:', err));
     }
 
     function handleImageChange(e: React.ChangeEvent<HTMLInputElement>){
@@ -106,10 +111,10 @@ export default function AddBook(){
                     <textarea
                         className={styles.textarea}
                         name="description"
-                        placeholder="Descrição do livro"
+                        placeholder="Descrição do livro..."
                         value={book.description} 
                         onChange={handleChange}
-                        required
+
                         />
                     <label className={styles.label}><strong>Imagem:</strong></label>
                     {book.imageUrl && (
@@ -141,6 +146,7 @@ export default function AddBook(){
 
                     <button type="submit">Salvar</button>
                 </form>
+                {success && <p className={styles.success}>Livro cadastrado com sucesso!</p>}
             </div>
             <Footer></Footer>
         </div>

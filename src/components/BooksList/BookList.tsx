@@ -1,21 +1,28 @@
-// src/components/BooksList.tsx
+
 import { useEffect, useState } from "react";
 import type { Book } from "../../types/Book";
 import styles from "./BookList.module.css";
 import { Link } from "react-router-dom";
+import { getBooks } from "../../services/bookService";
 
 export const BooksList = () => {
   const [books, setBooks] = useState<Book[]>([]);
+  const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    fetch('src/api/books.json')
-      .then(res => res.json())
-      .then(data => setBooks(data))
-      .catch(err => console.error('Erro ao carregar livros...', err))
-  }, [5000]);
+      getBooks()
+      .then((res)=> {
+        setBooks(res.data);
+        setLoading(false)
+        }
+        )
+
+  }, []);
 
   return (
     <div className={styles.container}>
+      {loading && <p>Carregando livros...</p>}
+
       <div className={styles.grid}>
         {books.map((book) => (
           <div key={book.id} className={styles.card}>

@@ -66,6 +66,7 @@
     margin-top: 5px;
     border: 1px solid #ffffff;
     text-decoration-color: var(--second-text-color);
+    font-size: large;
 }
 
 .formAddlivro .textarea{
@@ -76,6 +77,7 @@
     max-width: 86%;
     background-color: var(--auxiliar-color);
     border-radius: 8px;
+    font-size: large;
 }
 
 .formAddlivro .input:focus {
@@ -90,4 +92,10 @@
 
 .input,.textarea::placeholder {
   color: var(--second-text-color);
+}
+
+.success {
+  color: green;
+  font-weight: bold;
+  margin-top: 10px;
 }
