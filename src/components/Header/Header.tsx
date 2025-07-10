@@ -28,7 +28,7 @@ export function Header(){
                         <div className={styles.nav}>
                             <div className={styles.textLinks}>
                                 <a href='/'>Buscar Livros</a>
-                                <a>Minha biblioteca</a>
+                                <a href='/mybooks'>Minha biblioteca</a>
                                 
                             </div>
                             <div className={styles.navLinks}>

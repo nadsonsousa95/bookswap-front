@@ -5,26 +5,34 @@ import styles from "./BookList.module.css";
 import { Link } from "react-router-dom";
 import { getBooks } from "../../services/bookService";
 
-export const BooksList = () => {
-  const [books, setBooks] = useState<Book[]>([]);
+interface IBooksProps{
+  books?: Book[]; 
+}
+
+export const BooksList = ({books}:IBooksProps) => {
+  const [Internalbooks, setInternalBooks] = useState<Book[]>([]);
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
+    if(books){
+      setInternalBooks(books)
+      setLoading(false)
+    }else{
       getBooks()
       .then((res)=> {
-        setBooks(res.data);
-        setLoading(false)
-        }
-        )
+        setInternalBooks(res.data);
+        })
+        .finally(() => setLoading(false));
+    }
 
-  }, []);
+  }, [books]);
 
   return (
     <div className={styles.container}>
       {loading && <p>Carregando livros...</p>}
 
       <div className={styles.grid}>
-        {books.map((book) => (
+        {Internalbooks.map((book) => (
           <div key={book.id} className={styles.card}>
             <img src={book.imageUrl} alt={book.title} className={styles.image} />
             <h3 className={styles.title}>{book.title}</h3>

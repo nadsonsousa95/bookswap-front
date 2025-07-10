@@ -6,6 +6,7 @@ export interface Book {
   edition: string;
   description?: string;
   swap: string;
-  user?: string;
+  userid: string;
+  telephone: string;
   imageUrl: string;
 }

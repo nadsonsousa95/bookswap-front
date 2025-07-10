@@ -7,9 +7,12 @@ import { v4 as uuidv4 } from 'uuid';
 import { FiUpload } from "react-icons/fi";
 import { PainelHeader } from "../../components/PainelHeader/PainelHeader";
 import { createBook } from "../../services/bookService";
+import { useAuth } from "../../contexts/AuthContext.tsx";
 
 
 export default function AddBook(){
+    const {user} = useAuth();
+
     const [success, setSuccess] = useState(false)
     const [book, setBook] = useState<Book>({
         id: uuidv4(),
@@ -17,23 +20,40 @@ export default function AddBook(){
         author: '',
         edition: '',
         swap: '',
-        user: '',
+        userid: '',
+        telephone: '',
         imageUrl: ''
     })
 
     function handleSubmit(e: React.FormEvent){
         e.preventDefault();
-        createBook(book)
+
+          if (!user) {
+            console.error("Usuário não autenticado.");
+            return;
+        }
+
+        const telefoneLimpo = book.telephone.replace(/\D/g, '');
+        
+          const newBook = {
+            ...book,
+            userid: String(user.id),
+            telephone: telefoneLimpo
+        };
+
+        createBook(newBook)
             .then(()=> {
                 setSuccess(true);
                 console.log('Livro criado');
+
                 setBook({
                     id: uuidv4(),
                     title: '',
                     author: '',
                     edition: '',
                     swap: '',
-                    user: '',
+                    userid: '',
+                    telephone: '',
                     imageUrl: '',
                     description: ''
                 });
@@ -54,9 +74,22 @@ export default function AddBook(){
       }
     }
 
+    function formatarTelefone(valor: string) {
+        const numeros = valor.replace(/\D/g, '');
+        if (numeros.length <= 10) {
+            return numeros.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3').trim();
+        }
+        return numeros.replace(/(\d{2})(\d{5})(\d{0,4})/, '($1) $2-$3').trim();
+        }
+
     function handleChange(e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>){
         const { name, value } = e.target;
-        setBook(( prev )=> ({ ...prev, [name]:value }))
+        if (name === "telephone"){
+            const telefoneFormatado = formatarTelefone(value);
+            setBook((prev) => ({ ...prev, telephone: telefoneFormatado }));
+        } else {
+            setBook((prev) => ({ ...prev, [name]: value }));
+        }
     }
 
     return (
@@ -107,6 +140,16 @@ export default function AddBook(){
                         onChange={handleChange}
                         required
                         />
+                         <label className={styles.label}><strong>Telefone para contato:</strong></label>
+                        <input
+                            className={styles.input}
+                            name="telephone"
+                            type="text"
+                            placeholder="(99) 99999-9999"
+                            value={book.telephone}
+                            onChange={handleChange}
+                            required
+                            />
                     <label className={styles.label}><strong>Descrição (opcional):</strong></label>
                     <textarea
                         className={styles.textarea}

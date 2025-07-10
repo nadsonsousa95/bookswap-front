@@ -24,6 +24,18 @@ export default function BookDetail(){
        }
     }, [id]);
 
+    function linkWhatsApp(numero:string):string{
+        const mensagem = `Olá tenho interesse em trocar com seu livro ${book?.title}...`
+        const numeroLimpo = numero.replace(/\D/g, '');
+        const mensagemCodificada = encodeURIComponent(mensagem);
+        return `https://wa.me/${numeroLimpo}?text=${mensagemCodificada}`;
+    }
+
+    function OpenWhatsApp(numero:string){
+        const url = linkWhatsApp(numero)
+        window.open(url, '_blank');
+    }
+
     if(!book){
         return <p>Livro não encontrado...</p>
     }
@@ -50,8 +62,7 @@ export default function BookDetail(){
                 <p><strong>Edição:</strong> {book.edition}</p>
                 <p><strong>Descrição:</strong> {book.description}</p>
                 <p><strong>Trocas desejadas:</strong> {book.swap}</p>
-                <p><strong>Usuário:</strong> {book.user}</p>
-                <button className={styles.button}>Entrar em contato</button>
+                <button onClick={()=> OpenWhatsApp(book.telephone)} className={styles.button}>Entrar em contato via Whatsapp</button>
             </div>
             <Footer></Footer>
         </div>
