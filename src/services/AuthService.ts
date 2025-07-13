@@ -14,4 +14,5 @@ export const AuthService = {
                 throw new Error('Email ou senha inválidos')
             }
     }
+
 }

@@ -8,7 +8,7 @@
 }
 
 .input {
-  width: 100%;
+  width: 95%;
   padding-left: 40px;
   height: 36px;
   border: 1px solid #ccc;
@@ -35,6 +35,19 @@
   color: #618561;
 }
 
+.search{
+  display: flex;
+  align-items: center;
+}
+
+.search button{
+  width: 8%;
+  padding: 0 15px;
+  height: 1%;
+  align-items: center;
+  display: flex;
+  text-align: center;
+}
 
 .container{
     width: 80%;
