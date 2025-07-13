@@ -9,6 +9,11 @@ import { useAuth } from "../../contexts/AuthContext.tsx";
 export function PainelHeader(){
     const { logout } = useAuth();
 
+    function handleLogout(){
+        alert('Tem certeza que deseja sair da conta?');
+        logout()
+    }
+
     return (
         <div className={styles.container}>
             <header>
@@ -24,7 +29,7 @@ export function PainelHeader(){
                     </div>
                     <div>
                         <CiLogout 
-                            onClick={logout}
+                            onClick={handleLogout}
                             size={25}
                             color='black'
                         />

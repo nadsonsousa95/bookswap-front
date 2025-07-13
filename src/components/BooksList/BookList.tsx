@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import type { Book } from "../../types/Book";
 import styles from "./BookList.module.css";

@@ -20,10 +20,9 @@ function App() {
         <Route path="/dashboard" element={<PrivateRoute><Dashboard /></PrivateRoute>} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
-        <Route path="/books/:id" element={<BookDetail></BookDetail>} />
+        <Route path="/books/:id" element={<PrivateRoute><BookDetail></BookDetail></PrivateRoute>} />
         <Route path='/addBook' element={<PrivateRoute><AddBook></AddBook></PrivateRoute>} />
         <Route path='/mybooks' element={<PrivateRoute><MyBooks></MyBooks></PrivateRoute>} />
-
       </Routes>
     </Router>
     </AuthProvider>
