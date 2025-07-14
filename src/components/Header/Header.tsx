@@ -5,19 +5,27 @@ import logo from './../../assets/img/logo.svg'
 import iconNotf from './../../assets/icons/messages.svg'
 import profile from './../../assets/img/profile.svg'
 import { useAuth } from "../../contexts/AuthContext.tsx";
+import { useState } from 'react';
+import { IoMenu } from "react-icons/io5";
 
 
 export function Header(){
     const { user } = useAuth();
+    const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <div className={styles.container}>
-            <header>
+            <header className={styles.header}>
+                <nav>
                 <Link to='/'>
-                    <img className={styles.logo} src={logo}/>
+                    <img className={styles.logo} src={logo} alt='Logo'/>
                 </Link>
 
-                <div className={styles.headerLinks}>
+                <button
+                    className={styles.menuToggle}
+                    onClick={()=> setMenuOpen(!menuOpen)}
+                ><IoMenu/></button>
+
+                <div className={`${styles.headerLinks} ${menuOpen ? styles.open : ''}`}>
                     {!user && (
                         <Link to={'/login'}>
                             <button className={styles.button}>Entrar</button>
@@ -42,8 +50,7 @@ export function Header(){
                         </div>
                     )}
                 </div>
-                
+                </nav>
             </header>
-        </div>
     )
 }

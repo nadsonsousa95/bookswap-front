@@ -7,8 +7,9 @@
   margin: 42px auto;
 }
 
-.input {
+.inputWrapper input {
   width: 95%;
+  padding: 6px;
   padding-left: 40px;
   height: 36px;
   border: 1px solid #ccc;
@@ -16,13 +17,14 @@
   font-size: 16px;
 }
 
-.input:focus {
+.inputWrapper input:focus {
   border-color: var(--primary-color);
   outline: none; 
 }
 
-.input::placeholder {
+.inputWrapper input::placeholder {
   color: var(--second-text-color);
+  font-size: large;
 }
 
 .searchIcon {
@@ -32,7 +34,6 @@
   transform: translateY(-50%);
   pointer-events: none;
   font-size: 18px;
-  color: #618561;
 }
 
 .search{
@@ -41,17 +42,19 @@
 }
 
 .search button{
-  width: 8%;
-  padding: 0 15px;
+  width: 10%;
+  padding: 0 20px;
   height: 1%;
   align-items: center;
   display: flex;
   text-align: center;
+  margin: 0 10px;
 }
 
 .container{
     width: 80%;
     margin: 0 auto;
+    margin-top: 100px;
 }
 
 

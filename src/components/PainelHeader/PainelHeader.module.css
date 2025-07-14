@@ -7,6 +7,15 @@
     padding: 1rem;
 }
 
+.painelHeader{
+    padding: 20px ;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin-right: 80px;
+}
+
 .painelheaderbuttons{
     display: flex;
     align-items: center;
@@ -27,6 +36,7 @@
     border: 1px solid var(--secondary-color);
     padding: 5px 10px;
     border-radius: 10px;
+    width: 80%;
 }
 
 .addBook p{

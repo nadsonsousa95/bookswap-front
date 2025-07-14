@@ -16,7 +16,7 @@ export function PainelHeader(){
 
     return (
         <div className={styles.container}>
-            <header>
+            <header className={styles.painelHeader}>
                 <div className={styles.painelheaderbuttons}>
                     <div className={styles.addBook}>
                         <Link to={'/addBook'}>

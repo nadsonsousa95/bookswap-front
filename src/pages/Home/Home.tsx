@@ -6,7 +6,6 @@ import { Footer } from "../../components/Footer/Footer";
 import { useEffect, useState } from "react";
 import type { Book } from "../../types/Book";
 import { getBooks } from "../../services/bookService";
-import { TiDeleteOutline } from "react-icons/ti";
 
 
 export default function Home() {
@@ -40,7 +39,7 @@ export default function Home() {
           />
         </div>
         <button onClick={()=> setSearchBook('')} className={styles.clearButton} title="Limpar">
-          <FiX size={15} /><p>Limpar</p>
+          <FiX /><p>Limpar</p>
           </button>
       </div>
      

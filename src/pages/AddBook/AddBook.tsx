@@ -5,7 +5,6 @@ import styles from './AddBook.module.css';
 import type {Book}  from "../../types/Book";
 import { v4 as uuidv4 } from 'uuid';
 import { FiUpload } from "react-icons/fi";
-import { PainelHeader } from "../../components/PainelHeader/PainelHeader";
 import { createBook } from "../../services/bookService";
 import { useAuth } from "../../contexts/AuthContext.tsx";
 
@@ -96,7 +95,6 @@ export default function AddBook(){
         <div>
             <Header></Header>
             <div className={styles.container}>
-                <PainelHeader></PainelHeader>
                 <h1>Anunciar novo livro</h1>
 
                 <form className={styles.formAddlivro} onSubmit={handleSubmit}>
@@ -140,7 +138,7 @@ export default function AddBook(){
                         onChange={handleChange}
                         required
                         />
-                         <label className={styles.label}><strong>Telefone para contato:</strong></label>
+                         <label className={styles.label}><strong>Telefone WhatsApp para contato:</strong></label>
                         <input
                             className={styles.input}
                             name="telephone"

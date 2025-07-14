@@ -2,15 +2,28 @@
 
 
 .container{
-    padding: 20px;
+    padding: 15px 50px;
     border-bottom: 1px solid rgb(218, 218, 218);
 }
 
-header{
-    padding: 0 50px;
+nav{
+    padding: 20px ;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background: white;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+    margin-bottom: 600px;
 }
 
 .logo{
@@ -49,11 +62,74 @@ header{
 }
 
 .navLinks img{
-    margin: 0 10px;
+    margin-left: 20px;
     transition: 0.9s;
 }
 
 .navLinks img:hover{
     opacity: 50%;
+}
+.menuToggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  width: 30px;
+}
+
+.menuToggle:hover{
+    background-color: white;
+}
+
+.headerLinks {
+  display: flex;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .menuToggle {
+    display: block;
+  }
+
+  .headerLinks {
+    display: none;
+    flex-direction: column;
+    background: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 100%;
+    border-top: 1px solid #ddd;
+    padding: 10px 0;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+
+  .headerLinks.open {
+    display: flex;
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .textLinks {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .textLinks a {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+
+  .navLinks {
+    flex-direction: row;
+    margin-top: 10px;
+  }
 }
 
