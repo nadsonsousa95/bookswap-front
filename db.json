@@ -85,6 +85,12 @@
       "name": "Nadson Junior",
       "email": "nadsonbcs95@gmail.com",
       "password": "123456"
+    },
+    {
+      "id": "f249",
+      "name": "Joao victor",
+      "email": "joaoteste@gmail.com",
+      "password": "654321"
     }
   ]
 }
