@@ -23,7 +23,6 @@ export const BooksList = ({books}:IBooksProps) => {
         })
         .finally(() => setLoading(false));
     }
-
   }, [books]);
 
   return (
@@ -37,6 +36,7 @@ export const BooksList = ({books}:IBooksProps) => {
             <h3 className={styles.title}>{book.title}</h3>
             <p className={styles.author}>Autor: {book.author}</p>
             <p className={styles.edition}>Edição: {book.edition}</p>
+             <p className={styles.author}>De: {book.username}</p>
             <Link to={`/books/${book.id}`}>
                 <button>Ver detalhes</button>
             </Link>

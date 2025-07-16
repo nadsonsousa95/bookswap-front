@@ -7,6 +7,7 @@ export interface Book {
   description?: string;
   swap: string;
   userid: string;
+  username: string,
   telephone: string;
   imageUrl: string;
 }

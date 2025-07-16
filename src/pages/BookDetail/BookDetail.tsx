@@ -61,6 +61,7 @@ export default function BookDetail(){
                 <p><strong>Autor:</strong> {book.author}</p>
                 <p><strong>Edição:</strong> {book.edition}</p>
                 <p><strong>Descrição:</strong> {book.description}</p>
+                <p><strong>Usuário:</strong> {book.username}</p>
                 <p><strong>Trocas desejadas:</strong> {book.swap}</p>
                 <button onClick={()=> OpenWhatsApp(book.telephone)} className={styles.button}>Entrar em contato via Whatsapp</button>
             </div>

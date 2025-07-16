@@ -20,6 +20,7 @@ export default function AddBook(){
         edition: '',
         swap: '',
         userid: '',
+        username: '',
         telephone: '',
         imageUrl: ''
     })
@@ -37,6 +38,7 @@ export default function AddBook(){
           const newBook = {
             ...book,
             userid: String(user.id),
+            username: user.name,
             telephone: telefoneLimpo
         };
 
@@ -52,6 +54,7 @@ export default function AddBook(){
                     edition: '',
                     swap: '',
                     userid: '',
+                    username: '',
                     telephone: '',
                     imageUrl: '',
                     description: ''
