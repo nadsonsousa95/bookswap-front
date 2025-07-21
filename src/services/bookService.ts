@@ -13,3 +13,4 @@ export const getBooksByUserId = async (userid: string) =>{
     });
     return res.data
   }
+export const updateBookById = (id:string, updatedBook:Book) => axios.put(`${BASE_URL}/${id}`, updatedBook)
