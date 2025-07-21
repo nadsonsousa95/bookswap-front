@@ -19,6 +19,36 @@
     width: 40%;
 }
 
+.btnEdition{
+    display: flex;
+    flex-direction: column;
+}
+
+.btnEdition button p{
+    margin-left: 10px;
+}
+
+.buttondelete{
+    background-color: var(--error-color);
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+}
+
+.buttondelete:hover{
+    background-color: rgb(243, 100, 100);
+}
+
+.buttonedit{
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3px;
+}
+
 span{
     text-decoration: none;
     color: var(--text-color);

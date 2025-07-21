@@ -35,8 +35,12 @@ export function Header(){
                     {user && (
                         <div className={styles.nav}>
                             <div className={styles.textLinks}>
-                                <a href='/'>Buscar Livros</a>
-                                <a href='/mybooks'>Minha biblioteca</a>
+                                <Link  to={'/'}>
+                                     <a href='/'>Buscar Livros</a>
+                                </Link>
+                               <Link to={'/mybooks'}>
+                                     <a href='/'>Minha biblioteca</a>
+                                </Link>
                                 
                             </div>
                             <div className={styles.navLinks}>
