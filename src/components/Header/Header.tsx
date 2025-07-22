@@ -1,13 +1,11 @@
-
 import styles from './Header.module.css';
 import { Link } from 'react-router-dom';
-import logo from './../../assets/img/logo.svg'
-import iconNotf from './../../assets/icons/messages.svg'
-import profile from './../../assets/img/profile.svg'
+import logo from './../../assets/img/logo.svg';
+import iconNotf from './../../assets/icons/messages.svg';
+import profile from './../../assets/img/profile.svg';
 import { useAuth } from "../../contexts/AuthContext.tsx";
 import { useState } from 'react';
 import { IoMenu } from "react-icons/io5";
-
 
 export function Header(){
     const { user } = useAuth();
@@ -41,7 +39,6 @@ export function Header(){
                                <Link to={'/mybooks'}>
                                      <a href='/'>Minha biblioteca</a>
                                 </Link>
-                                
                             </div>
                             <div className={styles.navLinks}>
                                 <Link to={'/'}>

@@ -2,6 +2,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import logo from './../../assets/img/logo.svg'
 import styles from './../Login/Login.module.css'
 import { useForm } from 'react-hook-form';
+import { AuthService } from '../../services/AuthService';
 
 type FormValues = {
   name: string;
@@ -15,20 +16,26 @@ function Register() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormValues>();
   const navigate = useNavigate()
 
-  function validationPassword(password: string, confirmPassword: string){
-    return(password == confirmPassword)
-  }
 
-  function onSubmit(data:FormValues){
-    console.log(data)
-    validationPassword('', '')
-    navigate('/',{replace: true})
+  async function onSubmit(data:FormValues){
+    if (data.password !== data.confirmPassword) {
+      alert("As senhas não coincidem!");
+      return;
+    }
+
+    try {
+      const user = await AuthService.createUser(data.name, data.email, data.password);
+      console.log("Usuário criado com sucesso:", user);
+      navigate('/', { replace: true });
+    } catch (error: any) {
+      alert(error.message || "Erro ao criar usuário.");
+    }
   }
 
   return (
     <div className={styles.container}>
         <Link to={'/'}>
-            <img src={logo} />
+            <img alt='logo' src={logo} />
         </Link>
         <p>Cadastre-se para começar a trocar livros!</p>
 
@@ -47,21 +54,21 @@ function Register() {
                 />
                 {errors.email && <span className={styles.errorMessage}>{errors.email.message}</span>}
             <input 
-                type="text" 
-                placeholder='(99)99999-9999'
-                {...register('telephone', { required: 'O telefone é obrigatório' })}
-                />
-                {errors.telephone && <span className={styles.errorMessage}>{errors.telephone.message}</span>}
-            <input 
                 type='password' 
                 placeholder='Criar senha'
-                {...register('password', { required: 'A senha é obrigatória' })}
+                {...register('password', { 
+                  required: 'A senha é obrigatória',
+                  minLength: {value: 6, message: 'A senha deve ter no mínimo 6 caracteres'}
+                })}
                 />
                 {errors.password && <span className={styles.errorMessage}>{errors.password.message}</span>}
             <input 
                 type='password' 
                 placeholder='Confirmar a senha'
-                {...register('confirmPassword', { required: 'Confirme a senha' })}
+               {...register('confirmPassword', { 
+                  required: 'A senha é obrigatória',
+                  minLength: {value: 6, message: 'A senha deve ter no mínimo 6 caracteres'}
+                })}
                 />
                 {errors.confirmPassword && <span className={styles.errorMessage}>{errors.confirmPassword.message}</span>}
 

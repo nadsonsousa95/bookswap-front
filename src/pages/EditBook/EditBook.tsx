@@ -6,6 +6,8 @@ import { Header } from "../../components/Header/Header";
 import { Footer } from "../../components/Footer/Footer";
 import styles from './EditBook.module.css';
 import { FiUpload } from "react-icons/fi";
+import { Link } from "react-router-dom";
+import { IoIosReturnLeft } from "react-icons/io";
 
 export default function EditBook() {
     const { id } = useParams();
@@ -66,6 +68,12 @@ export default function EditBook() {
             <Header></Header>
        
         <form className={styles.formEdit} onSubmit={handleSubmit}>
+            <Link to={`/books/${book.id}`}>
+                    <IoIosReturnLeft 
+                        size={25}
+                        color="#0F1A12"
+                    />
+                </Link>
             <h1>Editar Livro</h1>
             <label><strong>Título:</strong></label>
             <input
