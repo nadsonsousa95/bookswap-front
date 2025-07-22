@@ -26,7 +26,7 @@ function App() {
         <Route path='/addBook' element={<PrivateRoute><AddBook></AddBook></PrivateRoute>} />
         <Route path='/mybooks' element={<PrivateRoute><MyBooks></MyBooks></PrivateRoute>} />
         <Route path="/book/edit/:id" element={<PrivateRoute><EditBook /></PrivateRoute>} />
-        <Route path="/aboutUs" element={<PrivateRoute><About /></PrivateRoute>} />
+        <Route path="/aboutUs" element={<About />} />
       </Routes>
     </Router>
     </AuthProvider>
