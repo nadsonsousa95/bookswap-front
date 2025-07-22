@@ -9,6 +9,7 @@ import AddBook from './pages/AddBook/AddBook'
 import { AuthProvider } from './contexts/AuthContext'
 import { PrivateRoute } from './routes/PrivateRoute'
 import  MyBooks  from './pages/MyBooks/MyBooks.tsx'
+import EditBook from './pages/EditBook/EditBook.tsx'
 
 function App() {
 
@@ -23,6 +24,7 @@ function App() {
         <Route path="/books/:id" element={<PrivateRoute><BookDetail></BookDetail></PrivateRoute>} />
         <Route path='/addBook' element={<PrivateRoute><AddBook></AddBook></PrivateRoute>} />
         <Route path='/mybooks' element={<PrivateRoute><MyBooks></MyBooks></PrivateRoute>} />
+        <Route path="/book/edit/:id" element={<PrivateRoute><EditBook /></PrivateRoute>} />
       </Routes>
     </Router>
     </AuthProvider>

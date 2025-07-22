@@ -58,7 +58,9 @@ export default function BookDetail(){
     }
 
     function handleEdit(){
-
+        if (book) {
+            navigate(`/book/edit/${book.id}`);
+        }
     }
 
     if(!book){
