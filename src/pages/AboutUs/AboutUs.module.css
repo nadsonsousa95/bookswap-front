@@ -1,0 +1,47 @@
+@import './../../styles/global.css';
+
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  margin-top: 100px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  width: 120px;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  font-size: 2rem;
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  color: var(--second-text-color);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.content p {
+  text-align: justify;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+  margin-bottom: 1.2rem;
+}
+
+.backLink {
+  display: inline-block;
+  margin-top: 2rem;
+  text-decoration: none;
+  color: var(--second-text-color);
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.backLink:hover {
+  opacity: 70%;
+}

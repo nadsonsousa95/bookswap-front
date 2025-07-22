@@ -29,7 +29,11 @@ export function Header(){
                             <button className={styles.button}>Entrar</button>
                         </Link>
                     )}
-
+                    <div  className={styles.textLinks}>
+                         <Link to={'/aboutUs'}>
+                            <a>Quem somos</a>
+                         </Link>
+                    </div>
                     {user && (
                         <div className={styles.nav}>
                             <div className={styles.textLinks}>

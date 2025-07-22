@@ -12,6 +12,11 @@ footer{
 
 .textFooter{
     margin-top: 50px;
+    text-align: center;
+}
+
+.textFooter img{
+    width: 150px;
 }
 
 footer p{
