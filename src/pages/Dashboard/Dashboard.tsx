@@ -1,24 +1,43 @@
 import { Header } from "../../components/Header/Header"
 import styles from './Dashboard.module.css'
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import type { StudentProfile } from "../../types/ProfileProps";
 import profileImg from './../../assets/img/profile.svg'
 import { PainelHeader } from "../../components/PainelHeader/PainelHeader.tsx";
 import { Footer } from "../../components/Footer/Footer";
 import { useAuth } from "../../contexts/AuthContext.tsx";
+import type { Book } from "../../types/Book.ts";
+import { getBooksByUserId } from "../../services/bookService.ts";
+import { BooksList } from "../../components/BooksList/BookList.tsx";
 
 function Dashboard() {
     const { user } = useAuth();
-
+    const [internalbooks, setInternalBooks] = useState<Book[]>([])
+    const [loading, setLoading] = useState(true)
     const [isEditing, setIsEditing] = useState(false);
     const [profile, setProfile] = useState<StudentProfile>({
-      name: "Nadson Benigno",
-      email: "nadson@email.com",
+      name: user?.name ?? '',
+      email: user?.email ?? '',
       telephone: '71992232517',
       course: "Ciência da Computação",
       bio: "Apaixonado por tecnologia e educação.",
       img: ''
     });
+
+    useEffect(()=> {
+        async function fetchBooks() {
+          if (!user) return;
+          try {
+            const data = await getBooksByUserId(String(user.id));
+            setInternalBooks(data);
+          } catch (err) {
+            console.error("Erro ao carregar livros:", err);
+          } finally {
+            setLoading(false);
+          }
+        }
+           fetchBooks();
+        },[user]);
 
     const handleChange = (
       e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -141,7 +160,16 @@ function Dashboard() {
           {isEditing ? "Salvar" : "Editar Perfil"}
         </button>
       </div>
+      <div className={styles.mybooks}>
+                     <h2>Meus Livros Publicados</h2>
+                    <div>
+                        {loading && <p>Carregando livros...</p>}
+                        <BooksList books={internalbooks} />
+                        </div>
+                    
+        </div>
     </div>
+
     <Footer></Footer>
     </div>
   )
