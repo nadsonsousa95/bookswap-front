@@ -1,54 +1,55 @@
-# React + TypeScript + Vite
+# 📚 BookSwap – Plataforma de Troca de Livros
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**BookSwap** é uma aplicação web desenvolvida como projeto final da disciplina **Sistemas Web**, no curso de Computação da **Universidade Federal da Bahia (UFBA)**.  
+Seu objetivo é fomentar o hábito da leitura, conectando leitores e permitindo a troca de livros de forma simples, gratuita e colaborativa.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Cadastro e login de usuários
+- Adição de livros com título, autor, imagem, descrição e formas de troca
+- Lista de livros disponíveis com filtro de busca
+- Visualização dos detalhes do livro
+- Contato com o usuário via WhatsApp
+- Edição e exclusão de livros
+- UI responsiva e pensada para o público leitor
 
-## Expanding the ESLint configuration
+## 🧠 Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- [React](https://reactjs.org/)
+- [TypeScript](https://www.typescriptlang.org/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
+- [JSON Server](https://github.com/typicode/json-server) – API simulada
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## 🎨 Design e UX
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+A interface utiliza tons verdes frios, inspirados na tranquilidade e concentração que a leitura transmite.  
+A tipografia prioriza a legibilidade com fontes limpas nos textos e botões.  
+Todo o layout é **responsivo**, garantindo uma boa experiência tanto em desktops quanto em dispositivos móveis.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## 📦 Instalação e Execução
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### Clone o repositório
+
+```bash
+git clone https://github.com/nadsonsousa95/bookswap-front.git
+cd bookswap-front
+npm install
+npm run server
+npm run dev
+
+Acesse no navegador: http://localhost:5173
+
+Estrutura de pastas:
+
+src/
+├── components/       # Componentes reutilizáveis (Header, Footer, BookList, etc.)
+├── pages/            # Páginas principais (Home, Login, BookDetail, etc.)
+├── services/         # Comunicação com a API JSON Server
+├── types/            # Tipagens TypeScript
+├── contexts/         # Contexto de autenticação
+├── styles/           # Estilos modulares por componente
+
+Feito com 💚 por Nadson Sousa
+
