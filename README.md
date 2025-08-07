@@ -36,6 +36,7 @@ Todo o layout é **responsivo**, garantindo uma boa experiência tanto em deskto
 git clone https://github.com/nadsonsousa95/bookswap-front.git
 cd bookswap-front
 npm install
+npm install json-server
 npm run server
 npm run dev
 
