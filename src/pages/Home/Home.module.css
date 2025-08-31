@@ -1,6 +1,5 @@
 @import './../../styles/global.css';
 
-
 .inputWrapper {
   position: relative;
   width: 100%;
@@ -9,8 +8,7 @@
 
 .inputWrapper input {
   width: 95%;
-  padding: 6px;
-  padding-left: 40px;
+  padding: 6px 6px 6px 40px;
   height: 36px;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -36,25 +34,96 @@
   font-size: 18px;
 }
 
-.search{
+.search {
   display: flex;
   align-items: center;
 }
 
-.search button{
+.search button {
   width: 10%;
   padding: 0 20px;
-  height: 1%;
-  align-items: center;
+  height: 36px; 
   display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   margin: 0 10px;
 }
 
-.container{
-    width: 80%;
-    margin: 0 auto;
-    margin-top: 100px;
+.container {
+  width: 80%;
+  margin: 100px auto 0 auto;
+}
+
+.titleBooksList{
+  margin-bottom: 20px;
 }
 
 
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+    margin-top: 120px;
+  }
+
+  .titleBooksList{
+  text-align: center;
+}
+
+  .inputWrapper input {
+    width:80%;
+    font-size: 15px;
+    padding-left: 36px;
+    height: 34px;
+    margin: 0 auto;
+  }
+
+  .search {
+    display: flex;
+  }
+
+  .search button {
+    width: 30%;
+    padding: 0 12px;
+    height: 34px;
+    text-align: left;
+  }
+
+  .searchIcon {
+    font-size: 16px;
+    left: 10px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    width: 95%;
+    margin-top: 120px;
+  }
+
+  .inputWrapper {
+    margin: 24px auto;
+  }
+
+  .inputWrapper input {
+    width: 100%;
+    padding-left: 36px;
+    font-size: 14px;
+    height: 32px;
+  }
+
+  .search button {
+    width: 25%;
+    padding: 0 10px;
+    height: 32px;
+    margin: 0 5px;
+  }
+
+  .searchIcon {
+    font-size: 14px;
+    left: 8px;
+  }
+}

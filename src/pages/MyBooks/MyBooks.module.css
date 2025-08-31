@@ -1,6 +1,6 @@
 
 
-.container{
+.containerMyBooks{
     width: 80%;
     margin: 0 auto;
     padding: 20px;
@@ -11,4 +11,13 @@
 
 .mybooks{
     margin-top: 60px;
+}
+
+@media (max-width: 768px) {
+    .mybooks h2{
+        text-align: center;
+}
+    .containerMyBooks{
+        margin-top: 140px;
+    }
 }

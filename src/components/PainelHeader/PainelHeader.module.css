@@ -1,14 +1,14 @@
 @import './../../styles/global.css';
 
 .container{
-    top: 120px;
     position: absolute;
+    top: 120px;
     right: 20px;
     padding: 1rem;
 }
 
 .painelHeader{
-    padding: 20px ;
+    padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -23,8 +23,8 @@
 
 .painelheaderbuttons div{
     margin-left: 25px;
-    align-items: center;
     display: flex;
+    align-items: center;
     cursor: pointer;
 }
 
@@ -37,14 +37,98 @@
     padding: 5px 10px;
     border-radius: 10px;
     width: 80%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .addBook p{
-    margin: 5px;
+    margin: 0;
     color: var(--primary-color);
+    font-size: 0.9rem;
 }
 
 .logoutText{
     margin-left: 10px;
     color: var(--primary-color);
+    font-size: 0.9rem;
+}
+
+
+
+@media (max-width: 768px) {
+    .container {
+        top: 120px;
+        right: 10px;
+        padding: 0.5rem;
+    }
+
+    .painelHeader {
+        width: 95%;
+        margin-right: 0;
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .painelheaderbuttons {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .addBook {
+        width: auto;
+        padding: 5px 8px;
+    }
+
+    .addBook p,
+    .logoutText {
+        font-size: 0.85rem;
+    }
+
+    .painelheaderbuttons div {
+        margin-left: 10px;
+    }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+    .container {
+        top: 60px;
+        right: 5px;
+        padding: 0.3rem;
+    }
+
+    .painelHeader {
+        flex-direction: column;
+        align-items: flex-end;
+        width: 100%;
+        margin-right: 0;
+        padding: 5px;
+    }
+
+    .painelheaderbuttons {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-end;
+        width: 100%;
+    }
+
+    .painelheaderbuttons div {
+        margin-left: 0;
+        width: 100%;
+        justify-content: flex-end;
+        gap: 5px;
+    }
+
+    .addBook {
+        width: auto;
+        padding: 4px 6px;
+    }
+
+    .addBook p,
+    .logoutText {
+        font-size: 0.8rem;
+    }
 }

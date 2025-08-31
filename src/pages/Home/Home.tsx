@@ -44,11 +44,14 @@ export default function Home() {
       </div>
      
 
-         <h1>Livros Disponíveis</h1>
+         <h1 className={styles.titleBooksList}>Livros Disponíveis</h1>
+         <div className={styles.BooksList}>
           <BooksList books={livrosFiltrados}></BooksList>
           {livrosFiltrados.length === 0 && (
               <p>Nenhum livro encontrado para sua busca.</p>
             )}
+         </div>
+
         </div>
         <Footer></Footer>
     </div>

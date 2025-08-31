@@ -31,7 +31,7 @@ export default function MyBooks(){
     return(
         <div>
             <Header/>
-            <div className={styles.container}>
+            <div className={styles.containerMyBooks}>
                 <PainelHeader/>
                 <div className={styles.mybooks}>
                      <h2>Meus Livros Publicados</h2>

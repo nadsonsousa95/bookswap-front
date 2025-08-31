@@ -1,9 +1,9 @@
-
 @import './../../styles/global.css';
 
 .container {
   padding: 0;
 }
+
 
 .grid {
   display: flex;
@@ -18,7 +18,7 @@
   width: 200px;
   background-color: #fff;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  transition: transform 0.9s ease;
+  transition: transform 0.3s ease;
 }
 
 .card:hover {
@@ -47,4 +47,65 @@
 .swap {
   font-size: 0.85rem;
   color: var(--second-text-color);
+}
+
+
+
+
+@media (max-width: 768px) {
+  .grid {
+    gap: 1rem;
+    justify-content: center;
+  }
+
+  .card {
+    width: 45%; 
+    padding: 0.8rem;
+  }
+
+  .image {
+    height: 160px;
+  }
+
+  .title {
+    font-size: 1rem;
+  }
+
+  .author {
+    font-size: 0.85rem;
+  }
+
+  .edition,
+  .swap {
+    font-size: 0.8rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .grid {
+    gap: 0.8rem;
+  }
+
+  .card {
+    width: 90%;
+    padding: 0.6rem;
+  }
+
+  .image {
+    height: 140px;
+  }
+
+  .title {
+    font-size: 0.95rem;
+  }
+
+  .author {
+    font-size: 0.8rem;
+  }
+
+  .edition,
+  .swap {
+    font-size: 0.75rem;
+  }
 }
