@@ -28,6 +28,9 @@ A interface utiliza tons verdes frios, inspirados na tranquilidade e concentraç
 A tipografia prioriza a legibilidade com fontes limpas nos textos e botões.  
 Todo o layout é **responsivo**, garantindo uma boa experiência tanto em desktops quanto em dispositivos móveis.
 
+<img width="1912" height="977" alt="Captura de tela 2025-08-31 170254" src="https://github.com/user-attachments/assets/0dad8074-94c7-4d31-8f5d-5be46925670b" />
+
+
 ## 📦 Instalação e Execução
 
 ### Clone o repositório
